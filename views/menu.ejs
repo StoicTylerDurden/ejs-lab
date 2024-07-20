@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu</title>
+</head>
+<body>
+    
+    <%- include('./partials/nav') %>
+
+    <h1>Full Menu</h1>
+
+    <h2>Mains</h2>
+    <% RESTAURANT.menu.forEach((dish) => { %>
+        <% if (dish.category === "mains") { %>
+          <li><%=`${dish.name}  |   Price: ${dish.price}    |   Rating: ${dish.rating}  |   Details: ${dish.details}`%></li>
+        <% } %>
+    <% }) %>
+    
+    <h2>Desserts</h2>
+    <% RESTAURANT.menu.forEach((dish) => { %>
+        <% if (dish.category === "desserts") { %>
+            <li><%=`${dish.name}  |   Price: ${dish.price}    |   Rating: ${dish.rating}  |   Details: ${dish.details}`%></li>
+        <% } %>
+    <% }) %>
+
+    <h2>Sides</h2>
+
+    <% RESTAURANT.menu.forEach((dish) => { %>
+        <% if (dish.category === "sides") { %>
+            <li><%=`${dish.name}  |   Price: ${dish.price}    |   Rating: ${dish.rating}  |   Details: ${dish.details}`%></li>
+        <% } %>
+    <% }) %>
+</body>
+</html>
